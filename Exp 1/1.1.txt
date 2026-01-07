@@ -1,20 +1,21 @@
-#include iostream
-#include sstream
+ #include <iostream>
+#include <sstream>
 using namespace std;
 
 int main() 
 {
-    string str=Welcome to mit;
+    string str = "Welcome to mit";
     string wrd;
-    int count=0;
+    int count = 0;
     stringstream ss(str);
-    while(sswrd)
+
+    while (ss >> wrd)  
     {
         count++;
-        
     }
-    coutcount;
-    
+
+    cout << count;  
 
     return 0;
 }
+
