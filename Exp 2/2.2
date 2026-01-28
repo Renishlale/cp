@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int  max=0,val=0,i,n=4,j;
+    int arr[5];
+    cout<<"Enter the 4 elements of the array:";
+    for(i=0;i<n;i++)
+    {
+        cout<<"\n a["<<i<<"]:";
+        cin>>arr[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            val=arr[i]&arr[j];
+            if(max<val)
+            {
+                max=val;
+            }
+        }
+    }
+    cout<<"\n Maxmium: "<<max;
+    return 0;
+    
+}
