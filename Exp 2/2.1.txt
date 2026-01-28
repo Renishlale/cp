@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int N, n;
+
+    cout << "Enter the number: ";
+    cin >> N;
+
+    cout << "Enter the position of the bit: ";
+    cin >> n;
+
+    if (N & (1 << n))
+        cout << "The bit at position " << n << " is set";
+    else
+        cout << "The bit at position " << n << " is clear";
+
+    return 0;
+}
+
