@@ -1,0 +1,23 @@
+#include<iostream>
+ 
+using namespace std;
+
+int main() 
+{    
+    int n;
+    cout<<"Enter an integral number:";
+    cin>>n;
+    if(n==0)
+    {
+        cout<<"The number of digts in the nimber is 1.";
+        return 0;
+    }
+    int count=0;
+    while(n>0)
+    {
+        n=n/10;
+        count++;
+    }
+    cout<<"No. of digits in the number is:"<<count;
+    return 0;
+}
