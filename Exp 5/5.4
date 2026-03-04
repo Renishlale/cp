@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+const int SIZE = 10;
+int table[SIZE];
+
+int main() {
+    int n, key;
+
+    for (int i = 0; i < SIZE; i++)
+        table[i] = -1;
+
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        cin >> key;
+
+        int index = key % SIZE;
+
+        if (table[index] == -1 || table[index] == key)
+            table[index] = key;
+        else {
+            int newIndex = (key + 1) % SIZE;
+            table[newIndex] = key;
+        }
+    }
+
+    for (int i = 0; i < SIZE; i++) {
+        cout << i << ": ";
+        if (table[i] != -1)
+            cout << table[i];
+        cout << endl;
+    }
+}
