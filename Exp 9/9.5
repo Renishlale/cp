@@ -1,0 +1,30 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int prec(char c) {
+    if(c=='+'||c=='-') return 1;
+    if(c=='*'||c=='/') return 2;
+    return 0;
+}
+
+int main() {
+    string s = "a+b*c", res="";
+    stack<char> st;
+
+    for(char c : s) {
+        if(isalnum(c)) res += c;
+        else {
+            while(!st.empty() && prec(st.top()) >= prec(c)) {
+                res += st.top(); st.pop();
+            }
+            st.push(c);
+        }
+    }
+
+    while(!st.empty()) {
+        res += st.top(); st.pop();
+    }
+
+    cout << res;
+}
