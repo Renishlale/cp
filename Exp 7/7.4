@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    vector<int> a={3,5,10,10,15,20};
+    vector<int> b={5,10,15,30};
+
+    int i=0,j=0;
+    while(i<a.size() && j<b.size()){
+        if(a[i]<b[j]) i++;
+        else if(a[i]>b[j]) j++;
+        else{
+            cout<<a[i]<<" ";
+            i++; j++;
+        }
+    }
+}
