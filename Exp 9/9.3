@@ -1,0 +1,20 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+bool isBalanced(string s) {
+    stack<char> st;
+    for(char c : s) {
+        if(c=='('||c=='{'||c=='[') st.push(c);
+        else if(c==')'||c=='}'||c==']') {
+            if(st.empty()) return false;
+            st.pop();
+        }
+    }
+    return st.empty();
+}
+
+int main() {
+    string s = "{[()]}";
+    cout << (isBalanced(s) ? "Balanced" : "Not Balanced");
+}
